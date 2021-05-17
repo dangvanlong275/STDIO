@@ -95,15 +95,15 @@
             Globe Sabre Skate Shoes - Black
         </div>
         <div class="img">
-            <input type="image" src="./Picture/Details/img1.png" alt="">
-            <input type="image" src="./Picture/Details/img2.png" alt="">
-            <input type="image" src="./Picture/Details/img3.png" alt="">
-            <input type="image" src="./Picture/Details/img4.png" alt="">
-            <input type="image" src="./Picture/Details/img5.png" alt="">
-            <input type="image" src="./Picture/Details/img6.png" alt="">
+            <input class="img_" onclick="click1()" type="image" src="./Picture/Details/img1.png" alt="">
+            <input class="img_" onclick="click2()" type="image" src="./Picture/Details/img2.png" alt="">
+            <input class="img_" onclick="click3()" type="image" src="./Picture/Details/img3.png" alt="">
+            <input class="img_" onclick="click4()" type="image" src="./Picture/Details/img4.png" alt="">
+            <input class="img_" onclick="click5()" type="image" src="./Picture/Details/img5.png" alt="">
+            <input class="img_" onclick="click6()" type="image" src="./Picture/Details/img6.png" alt="">
         </div>
         <div class="zoom">
-            <img src="./Picture/Details/img.png" alt="error">
+            <img id="z1" src="./Picture/Details/img.png" alt="error">
         </div>
         <div class="text">
             <p style="font-size: 28px; line-height: 35px;">
@@ -121,17 +121,17 @@
                 <input type="button" value="11" disabled>
             </form>
             <form class="number" action="#">
-                <input id="bt1" type="button" value="-">
-                <input id="bt2" type="text" value="1" min="0">
-                <input id="bt3" type="button" value="+">
+                <input onclick="decrease()" id="bt1" type="button" value="-" >
+                <input id="bt2" type="text" value="1" min="1">
+                <input onclick="increase()" id="bt3" type="button" value="+">
             </form>
             <div class="whishlist">
-                    <input type="image" src="./Picture/Details/tym.png" alt="">
-                    <span>Add to Wishlist</span>
+                    <button><img style="margin-top: -5px;" src="./Picture/Details/tym.png" alt="">
+                    Add to Wishlist</button>
             </div>
-            <div class="card">
+            <button class="card">
                 <p>Add to Card</p>
-            </div>
+            </button>
             <div class="addtion">
                 <p>Additional information</p>
                 <input type="image" src="./Picture/Details/+.png" alt="">
@@ -252,4 +252,42 @@
         </div>
     </footer>
 </body>
+<script>
+    function click1(){
+        document.getElementById('z1').src = "./Picture/Details/img.png";
+    }
+    function click2(){
+        document.getElementById('z1').src = "./Picture/Details/img2.1.jpg";
+    }
+    function click3(){
+        document.getElementById('z1').src = "./Picture/Details/img3.1.jpg";
+    }
+    function click4(){
+        document.getElementById('z1').src = "./Picture/Details/img4.1.jpg";
+    }
+    function click5(){
+        document.getElementById('z1').src = "./Picture/Details/img5.1.jpg";
+    }
+    function click6(){
+        document.getElementById('z1').src = "./Picture/Details/img6.1.png";
+    }
+    
+    var giam = document.getElementById('bt1');
+    function decrease(){
+        let quantity = document.getElementById('bt2');
+        let x  = quantity.value--;
+        if(x > 1){
+            quantity.setAttribute("value","x");
+        }
+        else{
+            giam.disabled = true;
+        }
+    }
+    function increase(){
+        let quantity = document.getElementById('bt2');
+        let x = quantity.value++;
+        quantity.setAttribute("value","x");
+        giam.disabled=false;
+    }
+</script>
 </html>
