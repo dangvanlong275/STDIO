@@ -1,5 +1,6 @@
 body{
-    margin-left: 47.5px;
+    margin: 0 auto;
+    width: 1440px;
 }
 @font-face {
     font-family: Germania One;
